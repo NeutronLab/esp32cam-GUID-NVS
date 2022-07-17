@@ -21,12 +21,8 @@ extern "C" void app_main(void)
     const char *guid = generate_uuid_v4().c_str();
     printf("original guid: %s\n", guid);
 
-    printf("original guid before setting guid: %s\n", guid);
-
     err = set_guid(guid);
     ESP_ERROR_CHECK(err);
-
-    printf("original guid after setting guid: %s\n", guid);
 
     char *guid_from_storage;
     err = get_guid(guid_from_storage);
