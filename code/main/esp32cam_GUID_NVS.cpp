@@ -14,11 +14,12 @@
 
 extern "C" void app_main(void)
 {
-    const char *guid = generate_uuid_v4().c_str();
-    printf("original guid: %s\n", guid);
 
     esp_err_t err = init_guid_storage();
     ESP_ERROR_CHECK(err);
+
+    const char *guid = generate_uuid_v4().c_str();
+    printf("original guid: %s\n", guid);
 
     printf("original guid before setting guid: %s\n", guid);
 
